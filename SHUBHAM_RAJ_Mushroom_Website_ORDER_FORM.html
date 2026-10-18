@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fresh Button Mushrooms by SHUBHAM RAJ">
+  <title>SHUBHAM RAJ | Fresh Button Mushrooms</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;background:#f7fbf6;color:#1d2b20;line-height:1.6}
+    header{min-height:72vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:70px 20px;position:relative;overflow:hidden;background:linear-gradient(135deg,#eaf7e8,#fffdf6)}
+    header:before{content:"🍄";position:absolute;font-size:180px;opacity:.10;right:-20px;bottom:-30px}
+    .menu{position:absolute;left:18px;top:18px;z-index:5}
+    .menu button{border:0;background:#fff;border-radius:12px;width:48px;height:48px;font-size:28px;cursor:pointer;box-shadow:0 5px 18px #0002}
+    .dropdown{display:none;position:absolute;left:0;top:56px;background:#fff;border-radius:12px;width:170px;padding:8px;box-shadow:0 8px 25px #0002;text-align:left}
+    .dropdown.show{display:block}
+    .dropdown a{display:block;padding:10px 12px;color:#1d2b20;text-decoration:none;border-radius:8px}
+    .dropdown a:hover{background:#edf7eb}
+    .hero{max-width:800px}
+    .tag{display:inline-block;background:#dff1dc;color:#2d6a35;padding:7px 14px;border-radius:999px;font-weight:bold;margin-bottom:15px}
+    h1{font-size:clamp(42px,9vw,76px);line-height:1.05;margin-bottom:12px}
+    .hero h2{font-size:clamp(20px,4vw,30px);font-weight:500;color:#4c654f;margin-bottom:20px}
+    .btn{display:inline-block;background:#2f7d32;color:white;text-decoration:none;padding:13px 22px;border-radius:12px;font-weight:bold;margin:6px;box-shadow:0 6px 16px #2f7d3230}
+    .btn:hover{background:#256529}
+    main{max-width:1050px;margin:auto;padding:55px 18px}
+    section{margin-bottom:55px}
+    .section-title{text-align:center;font-size:32px;margin-bottom:12px}
+    .section-sub{text-align:center;color:#66756a;margin-bottom:28px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+    .card{background:#fff;padding:24px;border-radius:18px;box-shadow:0 5px 22px #18351d10;border:1px solid #e4eee2}
+    .card .icon{font-size:35px;margin-bottom:8px}
+    .card h3{margin-bottom:6px}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .info{background:#fff;border-radius:18px;padding:24px;box-shadow:0 5px 22px #18351d10}
+    .info p{margin:12px 0;color:#17251a}.info h3{margin-top:22px;margin-bottom:7px;color:#234f2a}
+    .order{background:#234f2a;color:white;border-radius:24px;padding:32px}
+    .order .section-title{color:white}
+    .order p{color:#e9f5e9}
+    .note{background:#fff9df;border-left:5px solid #d6a92b;padding:18px;border-radius:10px;margin-top:18px}
+    footer{background:#17251a;color:white;text-align:center;padding:38px 18px 85px}
+    footer h2{margin-bottom:8px}
+    footer p{color:#d8e4da;margin:5px 0}
+    .whatsapp{position:fixed;right:18px;bottom:18px;z-index:20;background:#25D366;color:white;text-decoration:none;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:29px;box-shadow:0 8px 22px #0003}
+    .whatsapp:hover{transform:scale(1.05)}
+    @media(max-width:650px){.about{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.card{padding:18px}.order{padding:24px}}
+    @media(max-width:430px){.cards{grid-template-columns:1fr}header{min-height:65vh}}
+  
+    .long-about .info h3{margin:28px 0 8px;color:#234f2a;font-size:23px}
+    .long-about .info h3:first-child{margin-top:0}
+    .long-about .info p{margin:0 0 14px;color:#17251a;font-weight:500}
+  </style>
+
+<style>
+.made-by {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 15;
+  font-size: 12px;
+  font-weight: 600;
+  color: #536456;
+  background: rgba(255,255,255,0.85);
+  padding: 5px 9px;
+  border-radius: 8px;
+}
+@media (max-width: 430px) {
+  .made-by {
+    top: 14px;
+    right: 12px;
+    font-size: 10px;
+    padding: 4px 7px;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<div class="made-by">Made by Harshit Sinha</div>
+
+
+<header id="home">
+  <div class="menu">
+    <button onclick="toggleMenu()" aria-label="Open menu">⋮</button>
+    <div class="dropdown" id="menu">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#mushroom" onclick="closeMenu()">Mushroom</a>
+      <a href="#order" onclick="closeMenu()">Order</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="tag">🍄 Fresh & Quality</div>
+    <h1>SHUBHAM RAJ</h1>
+    <h2>Fresh Button Mushrooms</h2>
+    <p>Fresh button mushrooms for your home, shop and food business.</p>
+    <a class="btn" href="#mushroom">Know More</a>
+  </div>
+</header>
+
+<main>
+  <section id="mushroom">
+    <h2 class="section-title">🍄 About Fresh Button Mushrooms</h2>
+    <p class="section-sub">A simple look at what fresh button mushrooms provide.</p>
+    <div class="cards">
+      <div class="card"><div class="icon">💪</div><h3>Protein</h3><p>Mushrooms provide plant-based protein and can be a useful part of a balanced diet.</p></div>
+      <div class="card"><div class="icon">🌿</div><h3>Vitamins & Minerals</h3><p>They contain nutrients such as B vitamins, potassium, selenium and other minerals.</p></div>
+      <div class="card"><div class="icon">🥗</div><h3>Light Food</h3><p>Fresh mushrooms are naturally low in calories and can be added to many everyday dishes.</p></div>
+      <div class="card"><div class="icon">🍳</div><h3>Easy to Cook</h3><p>Use them in vegetables, noodles, soups, pizza, pasta, sandwiches and many other recipes.</p></div>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="order">
+      <h2 class="section-title">📦 Orders & Bulk Discount</h2>
+      <p class="section-sub">For larger quantities, the price can be lower through bulk-order discounts.</p>
+      <div class="cards">
+        <div class="card"><h3>1–10 Boxes</h3><p>Regular order pricing.</p></div>
+        <div class="card"><h3>10+ Boxes</h3><p>Ask about bulk-order pricing.</p></div>
+        <div class="card"><h3>20 / 30 / 50 Boxes</h3><p>Special larger-order pricing may be available.</p></div>
+      </div>
+      <div class="note">
+        <strong>How to order:</strong> Message the contact number and mention your required <strong>date, time and number of boxes</strong>.
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">📍 About</h2>
+    <p class="section-sub">Business and owner information</p>
+    <div class="about">
+      <div class="info">
+        <p><strong>Owner Name:</strong> SHUBHAM RAJ</p>
+        <p><strong>Address:</strong> Pipra Bagahi, Kutumba, Aurangabad, Bihar, India</p>
+        <p><strong>Landmark:</strong> In Old Bam Baba Haata</p>
+      </div>
+      <div class="info">
+        <p><strong>Owner House:</strong> BGB Bank</p>
+        <p><strong>Mushroom Type:</strong> Fresh Button Mushroom</p>
+        <p><strong>Product:</strong> Fresh Button Mushrooms</p>
+      </div>
+    </div>
+
+    <div class="info" style="margin-top:22px;">
+      <h2>📝 Note 2</h2>
+      <p><strong>You will get mushrooms at a low price only if you place a bulk order.</strong></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="info">
+      <h2>📝 Note</h2>
+      <p>We offer fresh button mushrooms; you can place an order by contacting us at <strong>9102895553</strong>. Please note that larger orders may be eligible for lower pricing.</p>
+    </div>
+  </section>
+
+<section id="about-mushrooms" style="margin-top:55px;">
+  <div class="info">
+    <h2>🍄 About Mushrooms</h2>
+    <p>Mushrooms are fascinating organisms that have been used as food, medicine, and part of traditional cultures for thousands of years. Although mushrooms are often grouped with vegetables, they actually belong to the kingdom Fungi.</p>
+    <p>Unlike green plants, mushrooms do not make their own food through photosynthesis. They obtain nutrients from organic matter in their surroundings.</p>
+
+    <h3>What Is a Mushroom?</h3>
+    <p>A mushroom is the visible fruiting body of certain fungi. The main body of a fungus is made up of thin structures called hyphae, which together form mycelium. When conditions are suitable, the fungus produces a mushroom that grows above the surface.</p>
+
+    <h3>Button Mushrooms</h3>
+    <p>The button mushroom, scientifically known as <em>Agaricus bisporus</em>, is one of the most widely cultivated edible mushrooms in the world. It has a mild flavor and versatile texture and can be used in soups, sauces, pasta, noodles, pizza, sandwiches, rice dishes, and many other foods.</p>
+
+    <h3>Nutritional Value</h3>
+    <p>Mushrooms can be part of a balanced diet. They generally contain water, carbohydrates, protein, fiber, vitamins, and minerals. They can provide nutrients such as B vitamins, potassium, phosphorus, selenium, and copper. Some mushrooms can also provide vitamin D when exposed to suitable ultraviolet light.</p>
+
+    <h3>Protein, Vitamins, Minerals & Fiber</h3>
+    <p>Mushrooms contain protein and can contribute to daily protein intake. They can also provide B-group vitamins and minerals such as potassium, phosphorus, copper, and selenium. Some mushrooms contain dietary fiber, which can be included as part of a varied diet.</p>
+
+    <h3>Different Types of Mushrooms</h3>
+    <p>Common edible varieties include button mushrooms, cremini mushrooms, portobello mushrooms, oyster mushrooms, shiitake mushrooms, and enoki mushrooms. These varieties differ in taste, texture, appearance, and nutritional composition.</p>
+
+    <h3>How Mushrooms Are Grown</h3>
+    <p>Commercial mushroom cultivation requires careful control of environmental conditions such as temperature, humidity, ventilation, moisture, and growing material. Fresh mushrooms are harvested when they reach the desired size and quality and are handled carefully to maintain freshness.</p>
+
+    <h3>Freshness Matters</h3>
+    <p>Fresh mushrooms are delicate foods. Their quality can change depending on temperature, moisture, handling, and storage. Fresh button mushrooms should generally have a firm appearance and should not have an unpleasant smell. Proper refrigeration and careful handling can help maintain quality.</p>
+
+    <h3>Cooking Mushrooms</h3>
+    <p>Button mushrooms can be sautéed, grilled, roasted, baked, or added to soups, pasta, noodles, pizza, sandwiches, rice, curries, and vegetable dishes. They absorb flavors well and work with many seasonings.</p>
+
+    <h3>Why People Like Button Mushrooms</h3>
+    <p>Button mushrooms have a mild flavor, are relatively easy to prepare, are widely cultivated, and can be used in both home cooking and professional food preparation.</p>
+
+    <h3>Mushrooms in a Balanced Diet</h3>
+    <p>Mushrooms can be one part of a varied diet. They can be combined with vegetables, whole grains, pulses, beans, paneer, eggs, or other foods. Mushrooms are not a miracle food and should be enjoyed as part of an overall balanced diet.</p>
+
+    <h3>Edible and Poisonous Mushrooms</h3>
+    <p>Not all mushrooms are edible. Some wild mushrooms contain dangerous toxins and may look similar to edible species. Never eat an unknown wild mushroom. Edible mushrooms should be obtained from reliable sources.</p>
+
+    <h3>Economic Importance of Mushroom Farming</h3>
+    <p>Mushroom cultivation can be an important agricultural activity. Farmers and growers can supply mushrooms to markets, shops, restaurants, and other customers. The industry creates opportunities in cultivation, harvesting, packaging, transportation, retail, and food preparation.</p>
+
+    <h3>Buying Fresh Mushrooms</h3>
+    <p>When purchasing fresh button mushrooms, customers generally look for mushrooms that appear fresh, firm, and suitable for cooking. For larger orders, customers should provide the required date, time, and number of boxes so the order can be prepared appropriately.</p>
+
+    <h3>Conclusion</h3>
+    <p>Mushrooms are unique fungi with an important place in food and agriculture. Button mushrooms are widely cultivated, versatile, and can provide a variety of nutrients. Fresh button mushrooms can bring flavor and variety to everyday meals when included as part of a balanced diet.</p>
+  </div>
+</section>
+
+</main>
+
+<footer id="contact">
+  <h2>📞 Contact & Order</h2>
+  <p>For orders, please message us with your date, time and number of boxes.</p>
+  <p><strong>9102895553</strong></p>
+  <a class="btn" href="https://wa.me/919102895553?text=Hello%20SHUBHAM%20RAJ%2C%20I%20want%20to%20place%20an%20order.%20Date%3A%20%20Time%3A%20%20Number%20of%20boxes%3A%20" target="_blank" rel="noopener">💬 WhatsApp Direct</a>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919102895553?text=Hello%20SHUBHAM%20RAJ%2C%0A%0AYour%20Name%3A%20%0AHow%20Many%20Boxes%3A%20%0AYour%20Address%3A%20%0ADate%3A%20" target="_blank" rel="noopener" aria-label="WhatsApp">☘</a>
+
+<script>
+  function toggleMenu(){
+    document.getElementById('menu').classList.toggle('show');
+  }
+  function closeMenu(){
+    document.getElementById('menu').classList.remove('show');
+  }
+  document.addEventListener('click', function(e){
+    const menu = document.querySelector('.menu');
+    if(!menu.contains(e.target)) closeMenu();
+  });
+</script>
+</body>
+</html>
